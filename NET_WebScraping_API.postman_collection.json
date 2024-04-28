@@ -110,7 +110,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/WebScraper?searchQuery=Test",
+									"raw": "{{baseUrl}}/api/WebScraper?searchQuery=EGIS",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -121,7 +121,7 @@
 									"query": [
 										{
 											"key": "searchQuery",
-											"value": "Test"
+											"value": "EGIS"
 										}
 									]
 								}
