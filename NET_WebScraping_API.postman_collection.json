@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "fee223b6-1e56-451e-bdb1-082ef2bcdb46",
+		"name": "NET_WebScraping_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30195573"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "{user}",
+					"item": [
+						{
+							"name": "{password}",
+							"item": [
+								{
+									"name": "/auth/:user/:password",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/auth/:user/:password",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												":user",
+												":password"
+											],
+											"variable": [
+												{
+													"key": "user",
+													"value": "<string>"
+												},
+												{
+													"key": "password",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/auth/:user/:password",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														":user",
+														":password"
+													],
+													"variable": [
+														{
+															"key": "user"
+														},
+														{
+															"key": "password"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "WebScraper",
+					"item": [
+						{
+							"name": "Get Web Elements",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/WebScraper?searchQuery=Test",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"WebScraper"
+									],
+									"query": [
+										{
+											"key": "searchQuery",
+											"value": "Test"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/WebScraper?searchQuery=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"WebScraper"
+											],
+											"query": [
+												{
+													"key": "searchQuery",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "jwt",
+		"jwt": [
+			{
+				"key": "payload",
+				"value": "{\r\n  \"unique_name\": \"testUser\",\r\n  \"nbf\": 1714338860,\r\n  \"exp\": 1714943660,\r\n  \"iat\": 1714338860\r\n}",
+				"type": "string"
+			},
+			{
+				"key": "secret",
+				"value": "EY_NET_WEB_SCRAPING_TEST_SECRET_CFJW45754FWF457",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "algorithm",
+				"value": "HS256",
+				"type": "string"
+			},
+			{
+				"key": "isSecretBase64Encoded",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "headerPrefix",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "queryParamKey",
+				"value": "token",
+				"type": "string"
+			},
+			{
+				"key": "header",
+				"value": "{}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:44388"
+		}
+	]
+}
