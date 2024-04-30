@@ -42,6 +42,14 @@ builder.Services.AddInMemoryRateLimiting();
 //builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
 builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
+builder.Services.AddCors(cfg =>
+{
+    cfg.AddPolicy("CRUD_Policy", app =>
+    {
+        app.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 
@@ -56,6 +64,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseIpRateLimiting();
+
+app.UseCors("CRUD_Policy");
 
 app.MapControllers().RequireAuthorization();
 
@@ -77,6 +87,7 @@ app.MapGet("/auth/{user}/{password}", (string user, string password) =>
         };
 
         var token = tokenHandler.CreateToken(tokenDes);
+        Console.WriteLine(tokenHandler.WriteToken(token));
         return tokenHandler.WriteToken(token);
     }
     else
