@@ -133,7 +133,7 @@ namespace NET_WebScraping_API.Controllers
                                 dataLine.firstName = col.Text;
                                 break;
                             case 1:
-                                dataLine.adress = col.Text;
+                                dataLine.address = col.Text;
                                 break;
                             case 2:
                                 dataLine.country = col.Text;

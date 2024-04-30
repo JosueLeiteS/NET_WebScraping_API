@@ -3,7 +3,7 @@
     public class DataWorldbank
     {
         public string firstName { get; set; }
-        public string adress { get; set; }
+        public string address { get; set; }
         public string country { get; set; }
         public string periodFrom { get; set; }
         public string periodTo { get; set; }
