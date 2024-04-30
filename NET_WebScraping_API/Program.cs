@@ -38,8 +38,6 @@ builder.Services.Configure<IpRateLimitPolicies>(appSettings.GetSection("IpRateLi
 
 builder.Services.AddInMemoryRateLimiting();
 
-//builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
-//builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
 builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
 builder.Services.AddCors(cfg =>
