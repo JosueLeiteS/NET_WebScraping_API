@@ -45,10 +45,10 @@ namespace NET_WebScraping_API.Controllers
                 driver.Navigate().GoToUrl(offshoreUrl);
 
                 //Buscar searchQuery en Offshore
-                var searchBar = driver.FindElement(By.XPath("/html/body/div[4]/div[1]/div/form/input[1]"));
-                var search = driver.FindElement(By.XPath("/html/body/div[4]/div[1]/div/form/div/button"));
-                var statementAccept = driver.FindElement(By.XPath("/html/body/div[7]/div[1]/div/div/div/form/div/div[1]/label/span"));
-                var statementSubmit = driver.FindElement(By.XPath("/html/body/div[7]/div[1]/div/div/div/form/div/div[2]/button"));
+                var searchBar = driver.FindElement(By.XPath("/html/body/div[3]/div[1]/div/form/input[1]"));
+                var search = driver.FindElement(By.XPath("/html/body/div[3]/div[1]/div/form/div/button"));
+                var statementAccept = driver.FindElement(By.XPath("//*[@id=\"accept\"]"));
+                var statementSubmit = driver.FindElement(By.XPath("//*[@id=\"__BVID__73___BV_modal_body_\"]/form/div/div[2]/button"));
                 string offshoreTableXpath = @$"//*[@id=""search_results""]/div/table/tbody/tr";
 
                 statementAccept.Click();
@@ -113,7 +113,7 @@ namespace NET_WebScraping_API.Controllers
                 }
 
                 //Buscar searchQuery en Worldbank
-                searchBar = driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div/div/div/div/div/div[1]/div[2]/div/div/div/div[5]/div[2]/div/div/div[2]/div/input"));
+                searchBar = driver.FindElement(By.XPath("//*[@id=\"category\"]"));
                 searchBar.SendKeys(searchQuery);
 
                 //Extrar resultados de busqueda
@@ -159,8 +159,8 @@ namespace NET_WebScraping_API.Controllers
                 driver.Navigate().GoToUrl(sanctionSearchUrl);
 
                 //Buscar searchQuery en Sanctions
-                searchBar = driver.FindElement(By.XPath("/html/body/form/div[3]/div/div/div[3]/div/div/div/div[2]/table/tbody/tr[2]/td[3]/input"));
-                search = driver.FindElement(By.XPath("/html/body/form/div[3]/div/div/div[3]/div/div/div/div[2]/table/tbody/tr[5]/td[5]/input[1]"));
+                searchBar = driver.FindElement(By.XPath("//*[@id=\"ctl00_MainContent_txtLastName\"]"));
+                search = driver.FindElement(By.XPath("//*[@id=\"ctl00_MainContent_btnSearch\"]"));
                 searchBar.SendKeys(searchQuery);
                 search.Click();
 
